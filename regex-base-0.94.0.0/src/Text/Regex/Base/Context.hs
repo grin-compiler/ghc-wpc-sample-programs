@@ -300,8 +300,8 @@ instance (RegexLike a b) => RegexContext a b Int where
 -- ** Instances based on matchOnce,matchOnceText
 
 instance (RegexLike a b) => RegexContext a b (MatchOffset,MatchLength) where 
-  match r s = maybe (-1,0) (!0) (matchOnce r s)
-  matchM r s = maybe regexFailed (return.(!0)) (matchOnce r s)
+  match r s = maybe (-1,0) (! 0) (matchOnce r s)
+  matchM r s = maybe regexFailed (return.(! 0)) (matchOnce r s)
 
 instance (RegexLike a b) => RegexContext a b (MatchResult b) where 
   match r s = maybe (MR {mrBefore = s,mrMatch = empty,mrAfter = empty

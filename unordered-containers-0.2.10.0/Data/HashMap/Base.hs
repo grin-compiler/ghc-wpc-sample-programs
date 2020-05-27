@@ -5,7 +5,7 @@
 {-# LANGUAGE TypeFamilies #-}
 {-# LANGUAGE UnboxedTuples #-}
 {-# LANGUAGE LambdaCase #-}
-#if __GLASGOW_HASKELL__ >= 802
+#if __GLASGOW_HASKELL__ >= 802 && 0
 {-# LANGUAGE TypeInType #-}
 {-# LANGUAGE UnboxedSums #-}
 #endif
@@ -148,7 +148,7 @@ import Data.Functor.Classes
 import qualified Data.Hashable.Lifted as H
 #endif
 
-#if __GLASGOW_HASKELL__ >= 802
+#if __GLASGOW_HASKELL__ >= 802 && 0
 import GHC.Exts (TYPE, Int (..), Int#)
 #endif
 
@@ -496,7 +496,7 @@ member k m = case lookup k m of
 -- | /O(log n)/ Return the value to which the specified key is mapped,
 -- or 'Nothing' if this map contains no mapping for the key.
 lookup :: (Eq k, Hashable k) => k -> HashMap k v -> Maybe v
-#if __GLASGOW_HASKELL__ >= 802
+#if __GLASGOW_HASKELL__ >= 802 && 0
 -- GHC does not yet perform a worker-wrapper transformation on
 -- unboxed sums automatically. That seems likely to happen at some
 -- point (possibly as early as GHC 8.6) but for now we do it manually.
@@ -518,7 +518,7 @@ lookup k m = lookupCont (\_ -> Nothing) (\v _i -> Just v) (hash k) k m
 -- | lookup' is a version of lookup that takes the hash separately.
 -- It is used to implement alterF.
 lookup' :: Eq k => Hash -> k -> HashMap k v -> Maybe v
-#if __GLASGOW_HASKELL__ >= 802
+#if __GLASGOW_HASKELL__ >= 802 && 0
 -- GHC does not yet perform a worker-wrapper transformation on
 -- unboxed sums automatically. That seems likely to happen at some
 -- point (possibly as early as GHC 8.6) but for now we do it manually.
@@ -552,7 +552,7 @@ data LookupRes a = Absent | Present a !Int
 --   Key in map, no collision => Present v (-1)
 --   Key in map, collision    => Present v position
 lookupRecordCollision :: Eq k => Hash -> k -> HashMap k v -> LookupRes v
-#if __GLASGOW_HASKELL__ >= 802
+#if __GLASGOW_HASKELL__ >= 802 && 0
 lookupRecordCollision h k m = case lookupRecordCollision# h k m of
   (# (# #) | #) -> Absent
   (# | (# a, i #) #) -> Present a (I# i) -- GHC will eliminate the I#
@@ -584,7 +584,7 @@ lookupRecordCollision h k m = lookupCont (\_ -> Absent) Present h k m
 -- this whole thing is always inlined, we don't have to worry about
 -- any extra CPS overhead.
 lookupCont ::
-#if __GLASGOW_HASKELL__ >= 802
+#if __GLASGOW_HASKELL__ >= 802 && 0
   forall rep (r :: TYPE rep) k v.
 #else
   forall r k v.
@@ -1723,7 +1723,7 @@ fromListWith f = L.foldl' (\ m (k, v) -> unsafeInsertWith f k v m) empty
 -- | /O(n)/ Look up the value associated with the given key in an
 -- array.
 lookupInArrayCont ::
-#if __GLASGOW_HASKELL__ >= 802
+#if __GLASGOW_HASKELL__ >= 802 && 0
   forall rep (r :: TYPE rep) k v.
 #else
   forall r k v.
