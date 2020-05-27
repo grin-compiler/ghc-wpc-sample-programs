@@ -236,11 +236,7 @@ preformatted = try $ do
 makeAttr :: Text -> Attr
 makeAttr s =
   let xs = splitTextBy (`elem` (" \t" :: String)) s in
-    ("", syntax xs, mapMaybe nameValue xs)
-
-syntax :: [Text] -> [Text]
-syntax (s:_) | not $ T.isInfixOf "=" s = [s]
-syntax _ = []
+    ("", [], mapMaybe nameValue xs)
 
 nameValue :: Text -> Maybe (Text, Text)
 nameValue s =
