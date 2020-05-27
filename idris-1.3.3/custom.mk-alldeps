@@ -1,0 +1,1 @@
+CABALFLAGS += -f GMP  -f FFI --disable-documentation --disable-profiling --disable-library-profiling

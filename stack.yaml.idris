@@ -1,0 +1,33 @@
+resolver: lts-15.6
+
+allow-newer: true
+
+# use custom ext-stg whole program compiler GHC
+compiler:   ghc-8.11.0.20200524-ext-stg
+system-ghc: true
+extra-path:
+  - /home/csaba/haskell/grin-compiler/ghc-whole-program-compiler/_build/stage1/bin
+
+packages:
+
+- 'idris-1.3.3'
+
+- 'regex-base-0.94.0.0'
+- 'unordered-containers-0.2.10.0'
+
+extra-deps:
+  - cheapskate-0.1.1.2@sha256:b8ae3cbb826610ea45e6840b7fde0af2c2ea6690cb311edfe9683f61c0a50d96,3072
+
+flags:
+  idris:
+    FFI: true
+    GMP: true
+
+#dump-logs: all
+#build:
+#  keep-tmp-files: true
+#  cabal-verbose: true
+
+apply-ghc-options: everything
+ghc-options:
+  "$everything": -split-sections -O0

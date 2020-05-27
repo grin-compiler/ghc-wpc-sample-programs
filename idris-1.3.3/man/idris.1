@@ -1,0 +1,127 @@
+.\" Manpage for Idris.
+.\" Contact <> to correct errors or typos.
+.TH man 1 "23 May 2020" "1.3.3" "Idris man page"
+.SH NAME
+idris -\ a general purpose pure functional programming language with dependent types.
+.SH SYNOPSIS
+idris [ options] [FILES]
+.SH DESCRIPTION
+Idris is a general purpose pure functional programming language with
+dependent types. Dependent types allow types to be predicated on
+values, meaning that some aspects of a program’s behaviour can be
+specified precisely in the type. It is compiled, with eager
+evaluation. Its features are influenced by Haskell and ML.
+
++ Full dependent types with dependent pattern matching
+
++ Simple case expressions, where-clauses, with-rule
+
++ Pattern matching let- and lambda-bindings
+
++ Overloading via Interfaces (Type class-like), Monad comprehensions
+
++ do-notation, idiom brackets
+
++ Syntactic conveniences for lists, tuples, dependent pairs
+
++ Totality checking
+
++ Coinductive types
+
++ Indentation significant syntax, Extensible syntax
+
++ Tactic based theorem proving (influenced by Coq)
+
++ Cumulative universes
+
++ Simple Foreign Function Interface
+
++ Hugs style interactive environment
+
+It is important to note that Idris is first and foremost a research tool
+and project. Thus the tooling provided and resulting programs created
+should not necessarily be seen as production ready nor for industrial use.
+
+.SH OPTIONS
+  --nobanner               Suppress the banner
+  -q,--quiet               Quiet verbosity
+  --ide-mode               Run the Idris REPL with machine-readable syntax
+  --ide-mode-socket        Choose a socket for IDE mode to listen on
+  --ideslave               Deprecated version of --ide-mode
+  --ideslave-socket        Deprecated version of --ide-mode-socket
+  --log LEVEL              Debugging log level
+  --logging-categories CATS
+                           Colon separated logging categories. Use --listlogcats
+                           to see list.
+  --nobasepkgs             Do not use the given base package
+  --noprelude              Do not use the given prelude
+  --nobuiltins             Do not use the builtin functions
+  --check                  Typecheck only, don't start the REPL
+  -o,--output FILE         Specify output file
+  --interface              Generate interface files from ExportLists
+  --typeintype             Turn off Universe checking
+  --total                  Require functions to be total by default
+  --warnpartial            Warn about undeclared partial functions
+  --warnreach              Warn about reachable but inaccessible arguments
+  --listlogcats            Display logging categories
+  --link                   Display link flags
+  --listlibs               Display installed libraries
+  --libdir                 Display library directory
+  --include                Display the includes flags
+  --V2                     Loudest verbosity
+  --V1                     Louder verbosity
+  -V, --V0, --verbose      Loud verbosity
+  --ibcsubdir FILE         Write IBC files into sub directory
+  -i,--idrispath ARG       Add directory to the list of import paths
+  --sourcepath ARG         Add directory to the list of source search paths
+  -p,--package ARG         Add package as a dependency
+  --port PORT              REPL TCP port
+  --build IPKG             Build package
+  --install IPKG           Install package
+  --repl IPKG              Launch REPL, only for executables
+  --clean IPKG             Clean package
+  --mkdoc IPKG             Generate IdrisDoc for package
+  --checkpkg IPKG          Check package only
+  --testpkg IPKG           Run tests for package
+  -S,--codegenonly         Do no further compilation of code generator output
+  -c,--compileonly         Compile to object files rather than an executable
+  --codegen TARGET         Select code generator: C, Javascript, Node and
+                           bytecode are bundled with Idris
+  --cg-opt ARG             Arguments to pass to code generator
+  -e,--eval EXPR           Evaluate an expression without loading the REPL
+  --execute                Execute as idris
+  --exec EXPR              Execute as idris
+  -X,--extension EXT       Turn on language extension (TypeProviders or
+                           ErrorReflection)
+  --partial-eval           Switch on partial evaluation
+  --target TRIPLE          If supported the codegen will target the named triple.
+  --cpu CPU                If supported the codegen will target the named CPU
+                           e.g. corei7 or cortex-m3.
+  --color,--colour         Force coloured output
+  --nocolor,--nocolour     Disable coloured output
+  --optimise-nat-like-types,--optimize-nat-like-types
+                           Compile Nat-like types to big ints
+  --no-optimise-nat-like-types,--no-optimize-nat-like-types
+                           Do not compile Nat-like types to big ints
+  --consolewidth WIDTH     Select console width: auto, infinite, nat
+  --highlight              Emit source code highlighting
+  --no-tactic-deprecation-warnings
+                           Disable deprecation warnings for the old tactic
+                           sublanguage
+  -v,--version             Print version information
+  -h,--help                Show this help text
+
+.SH SEE ALSO
+
++ The IDRIS web site (https://idris-lang.org/
+
++  The IRC channel #idris, on chat.freenode.net
+
++ The wiki (https://github.com/idris-lang/Idris-dev/wiki/) has further user provided information, in particular:
+
+  – https://github.com/idris-lang/Idris-dev/wiki/Manual
+
+  – https://github.com/idris-lang/Idris-dev/wiki/Language-Features
+
+.SH AUTHOR
+The Idris Community

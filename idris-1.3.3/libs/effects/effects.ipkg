@@ -1,0 +1,23 @@
+package effects
+
+opts = "--nobasepkgs --partial-eval --typeintype -i ../prelude -i ../base"
+
+modules = Effects
+
+        , Effect.Default
+        , Effect.Exception
+        , Effect.File
+
+        , Effect.Logging.Category
+        , Effect.Logging.Default
+        , Effect.Logging.Level
+
+        , Effect.Memory
+        , Effect.Monad
+        , Effect.Perf
+        , Effect.Random
+        , Effect.Select
+        , Effect.State
+        , Effect.StdIO
+        , Effect.System
+        , Effect.Trans

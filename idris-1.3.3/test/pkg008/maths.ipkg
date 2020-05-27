@@ -1,0 +1,10 @@
+package maths
+
+sourcedir = src
+
+opts = "--quiet"
+modules = NumOps
+        , Test
+
+tests = Test.testDouble
+      , Test.testTriple
