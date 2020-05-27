@@ -36,6 +36,7 @@ module Basement.Block.Base
     , unsafeRecast
     ) where
 
+import           GHC.Exts
 import           GHC.Prim
 import           GHC.Types
 import           GHC.ST

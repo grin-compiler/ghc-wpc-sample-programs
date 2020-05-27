@@ -49,7 +49,7 @@ type XParser s a        = GenParser Char (XPState s) a
 type SimpleXParser a    = XParser () a
 
 data XPState s          = XPState
-    { xps_normalizeNewline :: ! Bool
+    { xps_normalizeNewline :: !Bool
     , xps_userState        :: s
     }
 

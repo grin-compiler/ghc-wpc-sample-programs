@@ -34,6 +34,7 @@ import           GHC.STRef
 import           GHC.IORef
 import           GHC.IO
 import           GHC.Prim
+import           GHC.Exts
 import           Basement.Compat.Base (Exception, (.), ($), Applicative, Monad)
 
 -- | Primitive monad that can handle mutation.

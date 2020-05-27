@@ -16,6 +16,7 @@ module Data.ByteArray.Bytes
     ( Bytes
     ) where
 
+import           GHC.Exts hiding (toList)
 import           GHC.Types
 import           GHC.Prim
 import           GHC.Ptr

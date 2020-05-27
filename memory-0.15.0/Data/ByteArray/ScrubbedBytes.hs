@@ -14,6 +14,7 @@ module Data.ByteArray.ScrubbedBytes
     ( ScrubbedBytes
     ) where
 
+import           GHC.Exts hiding (toList)
 import           GHC.Types
 import           GHC.Prim
 import           GHC.Ptr
