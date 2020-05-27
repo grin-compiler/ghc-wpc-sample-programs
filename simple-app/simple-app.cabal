@@ -1,0 +1,14 @@
+name:                simple-app
+version:             0.1.0.0
+
+license:             BSD3
+license-file:        LICENSE
+category:            Development
+build-type:          Simple
+cabal-version:       >=1.10
+
+executable simple-app
+  build-depends:  base, simple-lib
+  main-is:        Main.hs
+  other-modules:  Util
+  c-sources:      main_c_lib.c
