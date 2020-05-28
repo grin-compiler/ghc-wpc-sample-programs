@@ -2,12 +2,6 @@ resolver: lts-15.6
 
 allow-newer: true
 
-# use custom ext-stg whole program compiler GHC
-compiler:   ghc-8.11.0.20200524-ext-stg
-system-ghc: true
-extra-path:
-  - /home/csaba/haskell/grin-compiler/ghc-whole-program-compiler/_build/stage1/bin
-
 packages:
 
 - 'idris-1.3.3'
@@ -23,11 +17,17 @@ flags:
     FFI: true
     GMP: true
 
-#dump-logs: all
-#build:
-#  keep-tmp-files: true
-#  cabal-verbose: true
-
 apply-ghc-options: everything
 ghc-options:
   "$everything": -split-sections -O0
+
+# use custom ext-stg whole program compiler GHC
+compiler:     ghc-8.11.0.20200527
+ghc-variant:  ext-stg-whole-program-compiler
+
+setup-info-locations: []
+setup-info:
+  ghc:
+    linux64-custom-ext-stg-whole-program-compiler:
+      8.11.0.20200527:
+        url: "https://github.com/grin-compiler/ghc-wpc/releases/download/ghc-8.11.0.20200527-wpc/ghc-8.11.0.20200527.tar.xz"
