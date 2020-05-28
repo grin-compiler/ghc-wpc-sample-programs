@@ -11,6 +11,8 @@ To compile a given sample program (agda, idris, pandoc, or all of them) rename `
 
 It could take 60 minutes to compile all together, so start with the fastest first (27 sec) the `simple-app`.
 
+To compile executable with the whole stg program compiler, install it first: https://github.com/grin-compiler/ghc-whole-program-compiler-project
+
 When stack build finished, go to `simple-app/.stack-work/dist/x86_64-linux-custom-ext-stg-whole-program-compiler/Cabal-3.2.0.0/build/simple-app`
 
 and execute:  
