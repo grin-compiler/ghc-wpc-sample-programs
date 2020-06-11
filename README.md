@@ -9,10 +9,12 @@ Go to https://github.com/grin-compiler/ghc-whole-program-compiler-project and fo
 
 ## Sample programs
 
-- Simple App (`stack.yaml.simple`)
-- Agda (`stack.yaml.agda`)
-- Idris (`stack.yaml.idris`)
-- Pandoc (`stack.yaml.pandoc`)
+| Sample | project file|
+| --- | --- |
+| simple app | `stack.yaml.simple` |
+| agda | `stack.yaml.agda` |
+| idris | `stack.yaml.idris` |
+| pandoc | `stack.yaml.pandoc` |
 
 ## Build the sample programs
 
