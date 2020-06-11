@@ -7,8 +7,28 @@ This repo uses a custom GHC (ghc-wpc). Stack will download it and set up automat
 To compile the sample executables, you will need the *whole stg program compiler*.  
 Go to https://github.com/grin-compiler/ghc-whole-program-compiler-project and follow the **user** install steps.
 
+## Sample programs
+
+- Simple App
+  ```
+  stack.yaml.simple
+  ```
+- Agda  
+  ```
+  stack.yaml.agda
+  ```
+- Idris
+  ```
+  stack.yaml.idris
+  ```
+- Pandoc
+  ```
+  stack.yaml.pandoc
+  ```
+
 ## Build the sample programs
 
+By default the `stack.yaml` file is the same as `stack.yaml.simple`.  
 To compile the `simple-app` program run the following command:
 ```
 stack --stack-root `pwd`/.stack-root build
