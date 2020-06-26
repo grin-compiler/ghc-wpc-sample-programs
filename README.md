@@ -1,6 +1,6 @@
 # Sample programs for GHC whole program compiler
 
-This repo uses a custom GHC (ghc-wpc). Stack will download it and set up automatically. **(only on x64 Linux)**
+This repo uses a custom GHC (ghc-wpc). Stack will download it and set up automatically. **(only on x64 Uubuntu 16.04)**
 
 ## Preparation
 
